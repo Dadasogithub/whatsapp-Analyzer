@@ -1,0 +1,15 @@
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    container_name: whatsapp-backend
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    container_name: whatsapp-frontend
+    depends_on:
+      - backend
